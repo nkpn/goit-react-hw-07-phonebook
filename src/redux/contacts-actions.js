@@ -12,43 +12,53 @@ import shortid from 'shortid';
 // });
 
 //* Create Action
-const AddContact = createAction('Contacts/addContact', ({ name, number }) => {
-  return {
-    payload: {
-      id: shortid(),
-      number,
-      name,
-    },
-  };
-});
+// const AddContact = createAction('Contact/addContact', ({ name, number }) => {
+//   return {
+//     payload: {
+//       id: shortid(),
+//       number,
+//       name,
+//     },
+//   };
+// });
 
-const deleteContact = createAction('Contacts/deleteContact');
+// const deleteContact = createAction('Contact/deleteContact');
 
 // const deleteContact = contact => ({
 //   type: types.DELETE,
 //   payload: contact,
 // });
 
-const changeFilter = createAction('Contacts/changeFilter');
+const changeFilter = createAction('Contact/changeFilter');
 
 // const changeFilter = value => ({
 //   type: types.CHANGE_FILTER,
 //   payload: value,
 // });
 
-const fetchContactRequest = createAction('Contacts/fetchContactsRequest');
+const fetchContactRequest = createAction('Contacts/fetchContactRequest');
+const fetchContactSuccess = createAction('Contacts/fetchContactSuccess');
+const fetchContactError = createAction('Contacts/fetchContactError');
 
-const fetchContactSuccess = createAction('Contacts/fetchContactsSuccess');
+const addContactRequest = createAction('Contacts/addContactsRequest');
+const addContactSuccess = createAction('Contacts/addContactsSuccess');
+const addContactError = createAction('Contacts/addContactsError');
 
-const fetchContactError = createAction('Contacts/fetchContactsError');
+const deleteContactRequest = createAction('Contacts/deleteContactRequest');
+const deleteContactSuccess = createAction('Contacts/deleteContactSuccess');
+const deleteContactError = createAction('Contacts/deleteContactError');
 
 const contactsActions = {
-  AddContact,
-  deleteContact,
   changeFilter,
   fetchContactError,
   fetchContactRequest,
   fetchContactSuccess,
+  addContactRequest,
+  addContactSuccess,
+  addContactError,
+  deleteContactRequest,
+  deleteContactSuccess,
+  deleteContactError,
 };
 
 export default contactsActions;

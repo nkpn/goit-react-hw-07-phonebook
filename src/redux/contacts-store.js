@@ -1,5 +1,4 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { combineReducers, createStore } from 'redux';
 import storage from 'redux-persist/lib/storage';
 import {
   persistStore,

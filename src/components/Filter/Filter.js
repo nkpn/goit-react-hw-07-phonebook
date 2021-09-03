@@ -2,7 +2,6 @@ import React from 'react';
 import style from './Filter.module.css';
 import contactsActions from '../../redux/contacts-actions';
 import { useDispatch, useSelector } from 'react-redux';
-import PropTypes from 'prop-types';
 import { getFilter } from 'redux/contacts-selector';
 
 const Filter = () => {
@@ -21,14 +20,5 @@ const Filter = () => {
     </label>
   );
 };
-
-// const mapStateToProps = state => ({
-//   //! Ниже ошибка
-//   value: state.filter,
-// });
-
-// const mapDispatchToProps = dispatch => ({
-//   onChange: event => dispatch(actions.ChangeFilter(event.target.value)),
-// });
 
 export default Filter;

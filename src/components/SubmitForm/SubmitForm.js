@@ -49,7 +49,7 @@ function SubmitForm() {
     }
 
     //! Чекни тут
-    dispatch(contactsOperations.AddContact({ name, number }));
+    dispatch(contactsOperations.addContact({ name, number }));
     reset();
   };
 

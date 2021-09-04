@@ -5,11 +5,15 @@ import actions from './contacts-actions';
 
 //* CreateReducer
 const items = createReducer([], {
-  //* Переместил в contacts-opeartions
-  // [actions.AddContact]: (state, { payload }) => [...state, payload],
-  // [actions.deleteContact]: (state, { payload }) =>
-  //   state.filter(({ id }) => id !== payload),
   [contactsActions.fetchContactSuccess]: (_, action) => action.payload,
+
+  [contactsActions.addContactSuccess]: (state, action) => [
+    ...state,
+    action.payload,
+  ],
+
+  [contactsActions.deleteContactSuccess]: (state, action) =>
+    state.filter(state => state.id !== action.payload),
 });
 
 const isLoading = createReducer(false, {

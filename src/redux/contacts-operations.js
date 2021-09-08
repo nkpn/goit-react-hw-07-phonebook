@@ -5,7 +5,7 @@ import contactsActions from './contacts-actions';
 //   APIfetchContacts,
 // } from 'service/contacts-API';
 import axios from 'axios';
-axios.defaults.baseURL = 'http://localhost:3000';
+axios.defaults.baseURL = 'http://localhost:3030';
 
 const fetchContact = () => async dispatch => {
   dispatch(contactsActions.fetchContactRequest());

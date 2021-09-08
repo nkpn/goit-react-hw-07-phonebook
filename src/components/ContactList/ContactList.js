@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import style from './ContactList.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { getVisibleContacts } from 'redux/contacts-selector';
@@ -8,6 +8,10 @@ const ContactList = () => {
   const contacts = useSelector(getVisibleContacts);
   const dispatch = useDispatch();
   const deleteContact = id => dispatch(contactsOperations.deleteContact(id));
+
+  useEffect(() => {
+    dispatch(contactsOperations.fetchContact());
+  }, [dispatch]);
 
   return (
     <div className={style.Contacts__container}>
